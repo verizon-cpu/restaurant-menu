@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Catalogue</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ================= RESET ================= */
+* { margin:0; padding:0; box-sizing:border-box; font-family:Inter,system-ui,sans-serif; }
+body { 
+  background:#0b0b0b; 
+  color:#f5f5f5; 
+  overflow-x:hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* ================= HEADER ================= */
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 40px; background:rgba(0,0,0,.8);
+  position:sticky; top:0; z-index:1000; backdrop-filter:blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo { font-weight:800; font-size:1.8rem;
+  background: linear-gradient(135deg, #ffd700, #fff8b0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+nav a {
+  margin-left:24px; text-decoration:none; font-weight:600; font-size:1.05rem;
+  background: linear-gradient(135deg, #ffd700, #fff8b0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+nav a:hover { opacity:.85; }
+
+/* ================= CATALOGUE GRID ================= */
+.catalogue-section {
+  position:relative; z-index:1; padding:80px 20px;
+}
+.catalogue {
+  max-width:1200px; margin:0 auto; display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:32px;
+  position:relative; z-index:1;
+}
+.dish-card {
+  background:rgba(20,20,20,.85); border-radius:16px; overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.7);
+  display:flex; flex-direction:column; transition: transform .3s, box-shadow .3s;
+  border: 1px solid rgba(255,215,0,0.1);
+}
+.dish-card:hover { 
+  transform: translateY(-6px); 
+  box-shadow:0 28px 60px rgba(0,0,0,.85);
+  border-color: rgba(255,215,0,0.3);
+}
+
+.dish-card img { width:100%; height:200px; object-fit:cover; }
+.dish-card-content { padding:16px; flex:1; display:flex; flex-direction:column; align-items:center; }
+.dish-card-content h3 {
+  font-size:1.5rem; font-weight:700;
+  background: linear-gradient(135deg,#ffd700,#fff8b0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.dish-card-content .price {
+  font-size:1.2rem; font-weight:600; margin:8px 0 16px;
+  background: linear-gradient(135deg,#ffd700,#fff8b0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.dish-card-content button {
+  padding:12px 28px; font-weight:700; border:none; border-radius:12px;
+  background: linear-gradient(135deg,#ffd700,#fff8b0); color:#000; cursor:pointer;
+  transition: all .3s ease;
+  border: 1px solid rgba(255,215,0,0.3);
+}
+.dish-card-content button:hover { 
+  transform: scale(1.05); 
+  box-shadow:0 10px 25px rgba(255,215,0,.5);
+  border-color: rgba(255,215,0,0.5);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background:rgba(6,6,6,0.9); 
+  color:#fff; 
+  text-align:center; 
+  padding:60px 20px; 
+  margin-top:60px;
+  font-size:.95rem; 
+  opacity:.8;
+  position: relative;
+  z-index: 1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SINGLE BACKGROUND VIDEO -->
+<video autoplay muted loop playsinline class="background-video">
+  <source src="luxurywave.mp4" type="video/mp4">
+</video>
+
+<header>
+  <div class="logo">PREMIUM</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Catalogue</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- CATALOGUE -->
+<section class="catalogue-section">
+  <section class="catalogue">
+    <!-- Dish cards -->
+    <div class="dish-card">
+      <img src="1st-food.jpg" alt="Imperial Chicken">
+      <div class="dish-card-content">
+        <h3>Imperial Chicken</h3>
+        <div class="price">$29</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="2nd-food.jpg" alt="Diamond Wings">
+      <div class="dish-card-content">
+        <h3>Diamond Wings</h3>
+        <div class="price">$34</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="3rd-food.jpg" alt="Emerald Burger">
+      <div class="dish-card-content">
+        <h3>Emerald Burger</h3>
+        <div class="price">$26</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="4th-food.jpg" alt="Golden Fries">
+      <div class="dish-card-content">
+        <h3>Golden Fries</h3>
+        <div class="price">$12</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="5th-food.jpg" alt="Luxury Salad">
+      <div class="dish-card-content">
+        <h3>Luxury Salad</h3>
+        <div class="price">$18</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="6th-food.jpg" alt="Premium Pasta">
+      <div class="dish-card-content">
+        <h3>Premium Pasta</h3>
+        <div class="price">$25</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="7th.jpg" alt="Diamond Steak">
+      <div class="dish-card-content">
+        <h3>Diamond Steak</h3>
+        <div class="price">$38</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="chicken.jpg" alt="Gold Nuggets">
+      <div class="dish-card-content">
+        <h3>Gold Nuggets</h3>
+        <div class="price">$22</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="crab.jpg" alt="Royal Wings">
+      <div class="dish-card-content">
+        <h3>Royal Wings</h3>
+        <div class="price">$32</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <img src="stake.png" alt="Luxury Dessert">
+      <div class="dish-card-content">
+        <h3>Luxury Dessert</h3>
+        <div class="price">$20</div>
+        <button>Order Now</button>
+      </div>
+    </div>
+  </section>
+</section>
+
+<footer>
+  &copy; 2026 Premium Experience. All rights reserved.
+</footer>
+
+<script>
+/* Simple scroll effect for header */
+window.addEventListener('scroll',()=>{
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.style.background = 'rgba(0,0,0,0.95)';
+  } else {
+    header.style.background = 'rgba(0,0,0,0.8)';
+  }
+});
+</script>
+
+</body>
+</html>
